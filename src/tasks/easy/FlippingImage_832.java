@@ -21,12 +21,13 @@ class FlippingImage_832 {
     }
 
     public static int[][] flipAndInvertImage(int[][] A) {
-        for (int i = 0; i < A.length; i ++) {
-            int tmp = A[i][0];
-            A[i][1] = A[i][1] == 0 ? 1 : 0;
-            A[i][0] = A[i][2] == 0 ? 1 : 0;
-            A[i][2] = tmp == 0 ? 1 : 0;
+        int[][] B = new int[A.length][A[0].length];
+
+        for (int i = 0; i < A.length; i++) {
+            for (int j = 0; j < A[i].length; j++) {
+                B[i][j] = A[i][A[i].length - j - 1] == 0 ? 1 : 0;
+            }
         }
-        return A;
+        return B;
     }
 }
