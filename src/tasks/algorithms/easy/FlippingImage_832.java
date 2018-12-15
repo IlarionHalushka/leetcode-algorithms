@@ -1,4 +1,4 @@
-package tasks.easy;
+package tasks.algorithms.easy;
 
 import java.io.IOException;
 
