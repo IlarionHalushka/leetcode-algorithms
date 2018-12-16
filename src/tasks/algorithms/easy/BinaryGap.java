@@ -1,3 +1,5 @@
+package tasks.algorithms.easy;
+
 import java.io.IOException;
 
 class BinaryGap {
