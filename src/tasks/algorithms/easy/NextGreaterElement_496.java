@@ -13,8 +13,7 @@ class NextGreaterElement_496 {
         int[] ans = new int[nums1.length];
 
         for (int i = 0; i < nums1.length; i++) {
-            int tmp = Arrays.asList(nums2).indexOf(nums1[i]);
-            for (int j = tmp + 1; j < nums2.length; j++) {
+            for (int j = indexOf(nums1[i], nums2); j < nums2.length; j++) {
                 if (nums1[i] < nums2[j]) {
                     ans[i] = nums2[j];
                     break;
@@ -26,5 +25,17 @@ class NextGreaterElement_496 {
         }
 
         return ans;
+    }
+
+    public static int indexOf(int el, int[] array) {
+        int index = -1;
+
+        for(int i = 0; i < array.length; i++) {
+            if(array[i] == el) {
+                index = i;
+                break;
+            }
+        }
+        return index;
     }
 }
