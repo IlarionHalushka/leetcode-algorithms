@@ -1,5 +1,6 @@
 package tasks.algorithms.easy;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 class NextGreaterElement_496 {
