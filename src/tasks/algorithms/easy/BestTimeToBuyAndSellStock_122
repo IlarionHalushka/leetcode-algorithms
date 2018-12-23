@@ -1,0 +1,25 @@
+var maxProfit = function(prices) {
+    let isStockFull = false;
+    let money = 0;
+
+    for (let i = 0; i < prices.length; i++) {
+        const current = prices[i];
+        const next = prices[i + 1];
+
+        if (!isStockFull) {
+            if (next < current || i == prices.length - 1) {
+                continue;
+            } else {
+                money -= current;
+                isStockFull = true;
+            }
+        } else {
+            if (current > next || i == prices.length - 1) {
+                money += current;
+                isStockFull = false;
+            }
+        }
+    }
+    return money;
+};
+
