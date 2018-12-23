@@ -1,0 +1,20 @@
+var majorityElement = function(nums) {
+    const obj = {};
+
+    for (let i = 0; i < nums.length; i++) {
+        if (obj.hasOwnProperty(nums[i])) {
+            obj[nums[i]]++;
+        } else {
+            obj[nums[i]] = 1;
+        }
+    }
+
+    for (let ob in obj) {
+        if (obj[ob] > nums.length / 2) return ob;
+    }
+    return null;
+};
+
+var majorityElementSort = function(nums) {
+    return nums.sort()[Math.floor(nums.length / 2)];
+};
