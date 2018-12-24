@@ -10,13 +10,14 @@ class Node {
 
     public Node() {}
 
-    public Node(int _val,List<Node> _children) {
+    public Node(int _val, List<Node> _children) {
         val = _val;
         children = _children;
 }
 
+// Recursive solution
 public class NaryTreePostOrderTraversal_590 {
-    List<Integer> res = new ArrayList<Integer>();
+    List<Integer> res = new ArrayList<>();
 
     public List<Integer> postorder(Node root) {
         if (root == null) return res;
