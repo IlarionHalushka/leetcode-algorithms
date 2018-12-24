@@ -18,8 +18,8 @@ class Node {
     }
 }
 
-// Iterative solution
 public class NaryTreePreOrderTraversal_589 {
+    // Iterative solution
     public List<Integer> preorder(Node root) {
         LinkedList<Node> stack = new LinkedList<>();
         LinkedList<Integer> res = new LinkedList<>();
@@ -36,4 +36,19 @@ public class NaryTreePreOrderTraversal_589 {
 
         return res;
     }
+
+    // Recursive solution
+    List<Integer> res = new ArrayList<Integer>();
+
+    public List<Integer> preorderRecursive(Node root) {
+        if (root == null) return res;
+
+        for (int i = root.children.size() - 1; i >= 0; i--) {
+            preorder(root.children.get(i));
+        }
+        res.add(0, root.val);
+        return res;
+    }
 }
+
+
