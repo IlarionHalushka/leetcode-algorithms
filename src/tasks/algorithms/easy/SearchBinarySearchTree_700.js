@@ -27,3 +27,30 @@ var searchBST = function(root, val) {
         }
 }
 
+// iterative
+var searchBST = function(root, val) {
+    const stack = [100];
+    stack[0] = root;
+
+    while (1) {
+        if (stack.length === 0) return null;
+
+        const currentNode = stack.pop();
+        if (currentNode.val === val) return currentNode;
+
+        if (currentNode.left) {
+            stack.push(currentNode.left);
+        }
+        if (currentNode.right) {
+            stack.push(currentNode.right);
+        }
+    }
+};
+
+// iterative more concise
+var searchBST = function(root, val) {
+    while (root != null && root.val != val) {
+        root = val > root.val ? root.right : root.left;
+    }
+    return root;
+};
