@@ -1,0 +1,16 @@
+var isCompleteTree = function(root) {
+    const queue = [root];
+
+    while (queue[0] != null) {
+        root = queue.shift();
+        queue.push(root.left);
+        queue.push(root.right)
+    }
+
+    for (let i = 1; i < queue.length; i++) {
+        if (queue[i] != null) {
+            return false;
+        }
+    }
+    return true;
+};
