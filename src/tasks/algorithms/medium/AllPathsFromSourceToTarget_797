@@ -1,0 +1,16 @@
+// my solution 88.44%
+var allPathsSourceTarget = function(graph) {
+    return helper(graph , [0], 0, []);
+};
+
+var helper = function(graph, previousStates, stateIndex, ans) {
+    if (stateIndex === graph.length - 1) ans.push(previousStates);
+
+    for (let i = 0; i < graph[stateIndex].length; i++) {
+        const prevStates = previousStates.slice(0);
+        prevStates.push(graph[stateIndex][i]);
+        helper(graph, prevStates, graph[stateIndex][i], ans);
+    }
+
+    return ans;
+};
