@@ -18,3 +18,25 @@ var partitionLabels = function(S) {
         if (arrayS.length === 0)     return result;
     }
 };
+
+
+// my solution #2 beats 32%
+var partitionLabels = function(S) {
+    let maxIndex = 0;
+    const arrayS = S.split('');
+    const result = [];
+    let gone = 0;
+
+    for (let i = 0; i < arrayS.length; i++) {
+
+        const currentLastIndex = arrayS.lastIndexOf(arrayS[i]);
+        if (currentLastIndex > maxIndex) maxIndex = currentLastIndex;
+
+        if (i === maxIndex) {
+            result.push(maxIndex + 1 - gone);
+            gone = maxIndex + 1;
+        }
+
+    }
+    return result;
+};
