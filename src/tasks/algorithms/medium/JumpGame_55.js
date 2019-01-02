@@ -13,6 +13,7 @@
 
 //  https://leetcode.com/problems/jump-game/
 
+// my solution beats 100%
 const canJump = function(nums) {
     let lastPos = nums.length - 1;
 
