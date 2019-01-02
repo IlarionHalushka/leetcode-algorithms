@@ -40,3 +40,24 @@ var partitionLabels = function(S) {
     }
     return result;
 };
+
+// my solution #3 beats 96.5% without using extra space for arrayS
+var partitionLabels = function(S) {
+    let maxIndex = 0;
+   // const arrayS = S.split('');
+    const result = [];
+    let gone = 0;
+
+    for (let i = 0; i < S.length; i++) {
+
+        const currentLastIndex = S.lastIndexOf(S.charAt(i));
+        if (currentLastIndex > maxIndex) maxIndex = currentLastIndex;
+
+        if (i === maxIndex) {
+            result.push(maxIndex + 1 - gone);
+            gone = maxIndex + 1;
+        }
+
+    }
+    return result;
+};
