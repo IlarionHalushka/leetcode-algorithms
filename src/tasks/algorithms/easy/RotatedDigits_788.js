@@ -42,3 +42,40 @@ var rotatedDigits = function(N) {
 
     return count;
 };
+
+// improved solution 45%
+var rotatedDigits = function(N) {
+    let count = 0;
+
+    for (let i = 1; i <= N; i++) {
+       let number = i;
+       let isGood = false;
+
+       while (number > 0) {
+           if (number % 10 === 2) isGood = true;
+           if (number % 10 === 5) isGood = true;
+           if (number % 10 === 6) isGood = true;
+           if (number % 10 === 3) {
+               isGood = false;
+               break;
+           }
+           if (number % 10 === 4) {
+               isGood = false;
+               break;
+           }
+           if (number % 10 === 7) {
+               isGood = false;
+               break;
+           }
+           if (number % 10 === 9) isGood = true;
+           // >>0 removes last number '3' from: 0.020000000000000003
+           number = (number / 10 >> 0);
+       }
+
+       if (isGood) {
+           count++;
+       }
+    }
+
+    return count;
+};
