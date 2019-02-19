@@ -1,7 +1,6 @@
 const str: string = "aaaabbcccccdDDDhhhhJJJk";
 
-const permutation = (s: string): string[] => {
-  // result = ''
+const stringCompression = (s: string): string[] => {
   const result: string[] = [];
 
   for (let i = 0; i < s.length - 1; i++) {
@@ -19,10 +18,10 @@ const permutation = (s: string): string[] => {
   return result;
 };
 
-console.log(permutation(str));
+console.log(stringCompression(str));
 
 console.time();
 for (let i = 1; i < 10000000; i++) {
-  permutation(str);
+  stringCompression(str);
 }
 console.timeEnd();
