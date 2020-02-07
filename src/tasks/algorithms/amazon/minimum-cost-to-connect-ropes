@@ -1,0 +1,15 @@
+public int connectRopes(int[] ropes){
+    int len = ropes.length;
+    if(len == 0) return 0;
+    PriorityQueue<Integer> pq = new PriorityQueue<>();
+    for(int rope: ropes) pq.add(rope);
+    int costs = 0;
+    while(pq.size() > 1){
+        int rope1 = pq.poll();
+        int rope2 = pq.poll();
+        int ropeNew = rope1 + rope2;
+        costs += ropeNew;
+        pq.add(ropeNew);
+    }
+    return costs;
+}
