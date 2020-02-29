@@ -57,7 +57,6 @@ var partitionLabels = function(S) {
             result.push(maxIndex + 1 - gone);
             gone = maxIndex + 1;
         }
-
     }
     return result;
 };

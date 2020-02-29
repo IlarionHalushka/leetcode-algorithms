@@ -5,43 +5,41 @@ var spiralMatrixIII = function(R, C, r0, c0) {
     const ans = [[r0, c0]];
     let steps = 1;
     let moved = 0;
-    let position = ans[ans.length - 1].slice(0);
+    const curr = [r0, c0];
     const N = R*C;
 
     while (ans.length < N) {
-        for (let i = 0; i < steps; i++) {
+        const lastStep = steps - 1;
 
+        for (let i = 0; i <= lastStep; i++) {
             if (direction === 'r') {
-                position[1] = position[1] + 1;
-                if (i === steps - 1)  {
-                    moved++
+                curr[1]++;
+                if (i === lastStep)  {
+                    moved++;
                     direction = 'd';
                 }
-
             } else if (direction === 'd') {
-                position[0] = position[0] + 1;
-                if (i === steps -1) {
-                    moved++
+                curr[0]++;
+                if (i === lastStep) {
+                    moved++;
                     direction = 'l';
                 }
-
             } else if (direction === 'l') {
-                position[1] = position[1] - 1;
-                if (i === steps -1) {
+                curr[1]--;
+                if (i === lastStep) {
                     moved++;
                     direction = 'u';
                 }
-
             } else if (direction === 'u') {
-                position[0] = position[0] - 1;
-                if (i === steps -1) {
+                curr[0]--;
+                if (i === lastStep) {
                     moved++;
                     direction = 'r';
                 }
             }
 
-            if ((position[1] >= 0 && position[1] < C) && (position[0] >= 0 && position[0] < R)) {
-                ans.push([position[0], position[1]]);
+            if ((curr[1] >= 0 && curr[1] < C) && (curr[0] >= 0 && curr[0] < R)) {
+                ans.push([curr[0], curr[1]]);
             }
         }
 

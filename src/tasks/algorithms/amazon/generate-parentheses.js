@@ -18,9 +18,9 @@ var generateParentheses = function(n) {
     if (r < l) {
       recurse(s + ')', l, r + 1);
     }
-  }
+  };
 
-  recurse(initial, left, right)
+  recurse(initial, left, right);
 
   return res;
 };

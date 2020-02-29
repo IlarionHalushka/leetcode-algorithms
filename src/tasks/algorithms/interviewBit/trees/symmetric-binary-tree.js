@@ -19,7 +19,7 @@ module.exports = {
       return 1;
     }
     return helper(A.left, A.right);
-  }
+  },
   isSymmetric: function (root) {
     if (!root) return 1;
     var leftArr = [root.left];
@@ -36,7 +36,7 @@ module.exports = {
       rightArr.push(r && r.left);
     }
     return 1;
-  }
+  },
   isSymmetric: function (root) {
     function traverseTree(leftTree, rightTree) {
       if (leftTree === null || rightTree == null) {
