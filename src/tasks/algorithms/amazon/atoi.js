@@ -1,4 +1,5 @@
 var myAtoi = function(str) {
+  // validation of integer string: '123'.match(/^(-|\+)?\d+$/g)
   let i=0, sign = 1, num = 0, MIN = -2147483648, MAX = 2147483647;
   str = str.trim();
   if (str[i]==='-' || str[i]==='+') sign = str[i++]==='-'?-1:1;

@@ -19,7 +19,6 @@ var combinationSum = function(candidates, target) {
       } else if (sum + c === target) {
         res.push(arr.concat(c));
       }
-
     }
   }
 
